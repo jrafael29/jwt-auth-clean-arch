@@ -1,0 +1,27 @@
+Ideia de portfolio
+
+API para gerenciamento de geolocalizações.
+Utilizando SSE
+
+Tecnologias a serem exercitadas.
+
+- Docker
+- NodeJS
+- MongoDB
+- Leaflet
+- Redis
+- Server-Sent-Events
+- JWT
+
+
+# Fluxos
+
+- Usuario poderá se cadastrar
+- Usuario poderá se autenticar 
+
+# Rotas não autenticadas
+- Visualizar localizações
+
+# Rotas autenticadas
+- Cadastro de localização ( para o usuario ) 
+- visualizar localizações ( para o usuario ) 
