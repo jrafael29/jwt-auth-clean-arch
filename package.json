@@ -1,0 +1,17 @@
+{
+  "name": "geo-sse",
+  "version": "1.0.0",
+  "description": "API para gerenciamento de geolocalizações.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "geo"
+  ],
+  "author": "J. Rafael",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

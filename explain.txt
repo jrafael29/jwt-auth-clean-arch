@@ -13,7 +13,6 @@ Tecnologias a serem exercitadas.
 - Server-Sent-Events
 - JWT
 
-
 # Fluxos
 
 - Usuario poderá se cadastrar
