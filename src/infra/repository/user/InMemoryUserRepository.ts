@@ -5,8 +5,7 @@ import { User } from "../../../domain/entity/User";
 export class InMemoryUserRepository implements UserRepository {
 
     private userList: User[] = [];
-    private id = 1;
-
+    private id: number = 1;
 
     async create(userData: {
         name: string,

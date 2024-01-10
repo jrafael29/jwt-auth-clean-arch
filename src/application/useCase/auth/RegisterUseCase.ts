@@ -1,16 +1,10 @@
+import { RegisterPayload } from './../../types/RegisterPayload';
 
 import UserRepository from "../../../domain/repository/UserRepository";
 
 import {Password} from "../../../domain/entity/Password";
 import {User} from "../../../domain/entity/User";
 
-
-type RegisterPayload = {
-    name: string,
-    phonenumber: string,
-    password: string ,
-    repeatPassword: string
-} 
 
 export class RegisterUseCase {
 
