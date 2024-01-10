@@ -1,7 +1,7 @@
 Ideia de portfolio
 
 API para gerenciamento de geolocalizações.
-Utilizando SSE
+Utilizando SSE, Clean Arch
 
 Tecnologias a serem exercitadas.
 
@@ -13,10 +13,22 @@ Tecnologias a serem exercitadas.
 - Server-Sent-Events
 - JWT
 
-# Fluxos
+# Features
 
 - Usuario poderá se cadastrar
 - Usuario poderá se autenticar 
+- Usuario poderá visualizar outros usuarios em um raio de X KM 
+- Usuario poderá ter X endereços cadastrados, e apenas 1 em USO. 
+- O endereço em uso, será o exibido para outros usuarios.
+
+
+
+
+
+
+
+
+
 
 # Rotas não autenticadas
 - Visualizar localizações
