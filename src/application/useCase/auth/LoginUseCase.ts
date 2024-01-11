@@ -1,9 +1,8 @@
 
 import UserRepository from '../../../domain/repository/UserRepository';
-import { JWTService } from '../../services/auth/jwtService';
+import { JwtService } from '../../services/auth/JwtService';
 import { PasswordService } from '../../services/auth/passwordService';
 import { LoginPayload } from './../../types/LoginPayload';
-
 
 
 export class LoginUseCase {
@@ -33,7 +32,7 @@ export class LoginUseCase {
         const {password, ...userToToken} = user 
 
         
-        const token = JWTService.sign({user: JSON.stringify(userToToken)})
+        const token = JwtService.sign({user: JSON.stringify(userToToken)})
         return token.value
     }
 }

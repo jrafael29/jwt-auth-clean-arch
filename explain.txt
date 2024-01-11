@@ -36,3 +36,16 @@ Tecnologias a serem exercitadas.
 # Rotas autenticadas
 - Cadastro de localização ( para o usuario ) 
 - visualizar localizações ( para o usuario ) 
+
+
+
+
+
+
+
+
+#REGISTRO 
+curl -X POST -H "Content-Type: application/json" -d '{"name":"Josef","phonenumber":"+5581991931921","password":"1234567","repeatPassword":"1234567"}' http://127.0.0.1:3333/register
+
+#LOGIN
+curl -X POST -H "Content-Type: application/json" -d '{"credential":"+5581991931921","password":"1234567"}' http://127.0.0.1:3333/login
