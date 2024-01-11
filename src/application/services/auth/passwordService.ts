@@ -3,7 +3,7 @@ import crypto, { scrypt } from 'node:crypto'
 import { promisify } from 'node:util';
 
 
-export class Password {
+export class PasswordService {
     static async hashPassword(password: string) {
         const salt = crypto.randomBytes(16).toString("hex");
         const scryptAsync = promisify(scrypt);

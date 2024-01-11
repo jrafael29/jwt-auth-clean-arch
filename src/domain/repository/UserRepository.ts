@@ -5,5 +5,7 @@ export default interface UserRepository {
         name: string,
         phonenumber: string,
         password: string
-    }): Promise<User>
+    }): Promise<User | undefined>
+
+    getByPhone(value: string): Promise<User | undefined>
 }

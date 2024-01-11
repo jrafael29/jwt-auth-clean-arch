@@ -11,7 +11,7 @@ export class InMemoryUserRepository implements UserRepository {
         name: string,
         phonenumber: string,
         password: string
-    }): Promise<User> {
+    }): Promise<User | undefined> {
         const newUser: User = {
             id: this.id++,
             ...userData,
@@ -19,6 +19,11 @@ export class InMemoryUserRepository implements UserRepository {
         }
         this.userList.push(newUser);
         return newUser;
+    }
+
+    async getByPhone(value: string): Promise<User | undefined> {
+        const user = this.userList.find(user => user.phonenumber === value);
+        return user;
     }
 
 
