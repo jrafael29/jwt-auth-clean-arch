@@ -1,11 +1,13 @@
 
-import UserRepository from '../../../domain/repository/UserRepository';
+import { Login } from '../../../domain/features/auth/Login';
+import { UserRepository } from '../../../domain/repository/UserRepository';
 import { JwtService } from '../../services/auth/JwtService';
 import { PasswordService } from '../../services/auth/passwordService';
 import { LoginPayload } from './../../types/LoginPayload';
 
 
-export class LoginUseCase {
+
+export class LoginUseCase implements Login {
 
     constructor(
         private userRepository: UserRepository

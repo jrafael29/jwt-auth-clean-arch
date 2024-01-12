@@ -1,6 +1,6 @@
 import { User } from "../entity/User"
 
-export default interface UserRepository {
+export interface UserRepository {
     create(userData: {
         name: string,
         phonenumber: string,

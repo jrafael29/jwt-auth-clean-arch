@@ -13,9 +13,9 @@ type Token = {
     value: string;
 }
 
-const JWT_SECRET_KEY = process.env.JWT_SECRET_KEY || "hehe"
-
 export class JwtService {
+
+    private static readonly JWT_SECRET_KEY = process.env.JWT_SECRET_KEY || "hehe"
 
     constructor(){}
 
@@ -24,7 +24,7 @@ export class JwtService {
         if(!payload)
         throw new Error("invalid payload");
 
-        const token = jwt.sign(payload, JWT_SECRET_KEY, {
+        const token = jwt.sign(payload, JwtService.JWT_SECRET_KEY, {
             algorithm: 'HS256',
             expiresIn: '7h'
         })
@@ -35,7 +35,7 @@ export class JwtService {
 
     static verify(token: string): string | object {
         try{
-            const result = jwt.verify(token, JWT_SECRET_KEY);
+            const result = jwt.verify(token, JwtService.JWT_SECRET_KEY);
             return result
         }catch(err: any){
             if(err.name === 'TokenExpiredError'){

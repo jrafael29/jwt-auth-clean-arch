@@ -42,10 +42,13 @@ Tecnologias a serem exercitadas.
 
 
 
-
-
 #REGISTRO 
 curl -X POST -H "Content-Type: application/json" -d '{"name":"Josef","phonenumber":"+5581991931921","password":"1234567","repeatPassword":"1234567"}' http://127.0.0.1:3333/register
 
 #LOGIN
 curl -X POST -H "Content-Type: application/json" -d '{"credential":"+5581991931921","password":"1234567"}' http://127.0.0.1:3333/login
+
+
+curl -X GET -H "Content-Type: application/json" http://127.0.0.1:3333/
+
+curl -X GET -H "Content-Type: application/json" -H "Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoie1wiaWRcIjoxLFwibmFtZVwiOlwiSm9zZWZcIixcInBob25lbnVtYmVyXCI6XCIrNTU4MTk5MTkzMTkyMVwiLFwiY3JlYXRlZF9hdFwiOlwiMjAyNC0wMS0xMlQwMDo0NzoyMC4yMDVaXCJ9IiwiaWF0IjoxNzA1MDIwNDQ0LCJleHAiOjE3MDUwNDU2NDR9.LdMSPPl7lFIJEbcTy6_6EEtawabiQjcAmzQDTpN4Ji8" http://127.0.0.1:3333/
