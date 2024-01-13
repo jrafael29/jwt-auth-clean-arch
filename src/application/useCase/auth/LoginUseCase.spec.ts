@@ -1,10 +1,9 @@
 import { RegisterUseCase } from './RegisterUseCase';
-import { InMemoryUserRepository } from "../../../infra/repository/user/InMemoryUserRepository";
+import userRepository from "../../../infra/repository/user/InMemoryUserRepository";
 import { LoginUseCase } from "./LoginUseCase"
 
 describe("Suite de teste para: LoginUseCase", () => {
 
-    const userRepository = new InMemoryUserRepository()
     const loginUseCase = new LoginUseCase(userRepository);
 
     test("deveria lançar um erro caso um dos campos estejam vazios", () => {
@@ -59,7 +58,7 @@ describe("Suite de teste para: LoginUseCase", () => {
         const registerUseCase = new RegisterUseCase(userRepository);
         const userData = {
             name: "José",
-            phonenumber: "+5581991931921",
+            phonenumber: "+5581991931922",
             password: "123456",
             repeatPassword: "123456"
         }

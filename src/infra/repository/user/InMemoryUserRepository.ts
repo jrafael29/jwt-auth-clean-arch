@@ -2,6 +2,8 @@ import { UserRepository } from "../../../domain/repository/UserRepository";
 
 import { User } from "../../../domain/entity/User";
 
+// singleton instance
+
 export default new (class InMemoryUserRepository implements UserRepository {
   private userList: User[] = [];
   private id: number = 1;

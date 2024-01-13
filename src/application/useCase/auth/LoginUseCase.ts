@@ -2,7 +2,7 @@
 import { Login } from '../../../domain/features/auth/Login';
 import { UserRepository } from '../../../domain/repository/UserRepository';
 import { JwtService } from '../../services/auth/JwtService';
-import { PasswordService } from '../../services/auth/passwordService';
+import { PasswordService } from '../../services/auth/PasswordService';
 import { LoginPayload } from './../../types/LoginPayload';
 
 

@@ -1,7 +1,7 @@
 import { RegisterPayload } from './../../types/RegisterPayload';
 import { UserRepository } from "../../../domain/repository/UserRepository";
 import { User } from "../../../domain/entity/User";
-import { PasswordService } from '../../services/auth/passwordService';
+import { PasswordService } from '../../services/auth/PasswordService';
 import { Register } from '../../../domain/features/auth/Register';
 
 
@@ -12,7 +12,8 @@ export class RegisterUseCase implements Register {
     async execute(data: RegisterPayload): Promise<User | undefined>{
         this.validateInputData(data);
 
-        // verificar se o data.phonenumber ja está em uso por outro usuario.
+        const phoneAlreadyExists = await this.userRepository.getByPhone(data.phonenumber)
+        if(phoneAlreadyExists) throw new Error("phonenumber already in use");
 
         const encryptedPassword = await PasswordService.hashPassword(data.password);
         const resultCreate = await this.userRepository.create({
