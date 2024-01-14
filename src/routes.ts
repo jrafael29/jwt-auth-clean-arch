@@ -21,7 +21,9 @@ router.use(authMiddleware);
 // private routes
 router.get("/pvt", (req: Request, res: Response): Response => {
   const resultStorage = asyncStorage.getStore();
-  return successResponse(res, {msg: "rota privada acessada com successo:",data: JSON.stringify(resultStorage),}, 200);
+  return successResponse(res, {
+    msg: "rota privada acessada com successo:",
+    data: resultStorage}, 200);
 });
 
 export { router as routes };

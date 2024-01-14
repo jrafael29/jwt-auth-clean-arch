@@ -36,8 +36,8 @@ export class RegisterController {
     } catch (err: any) {
       return errorResponse(
         res,
-        responses.INTERNAL_SERVER_ERROR.message,
-        responses.INTERNAL_SERVER_ERROR.statusCode
+        err.message,
+        500
       )
     }
   }
