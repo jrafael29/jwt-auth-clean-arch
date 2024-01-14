@@ -13,17 +13,17 @@ export default new (class InMemoryUserRepository implements UserRepository {
     phonenumber: string;
     password: string;
   }): Promise<User | undefined> {
-    const newUser: User = {
+    const user = new User({
       id: this.id++,
       ...userData,
       created_at: new Date(),
-    };
-    this.userList.push(newUser);
-    return newUser;
+    })
+    this.userList.push(user);
+    return user;
   }
 
   async getByPhone(value: string): Promise<User | undefined> {
-    const user = this.userList.find((user) => user.phonenumber === value);
+    const user = this.userList.find((user) => user.getPhone() === value);
     return user;
   }
 })();

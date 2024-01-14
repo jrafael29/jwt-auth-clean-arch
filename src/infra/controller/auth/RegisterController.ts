@@ -3,7 +3,7 @@ import { RegisterPayload } from "../../../application/types/RegisterPayload";
 import { RegisterUseCase } from "../../../application/useCase/auth/RegisterUseCase";
 import { responses } from "../../../application/response/HttpErrorResponses";
 import { errorResponse, successResponse } from "../../../application/response";
-import inMemoryUserRepository from "../../repository/user/InMemoryUserRepository";
+import inMemoryUserRepository from "../../../infra/repository/user/InMemoryUserRepository";
 
 export class RegisterController {
   static async handle(

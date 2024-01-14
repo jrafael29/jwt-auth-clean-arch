@@ -2,6 +2,7 @@ import { Request, Response, NextFunction } from "express";
 import { JwtService } from "../../application/services/auth/JwtService";
 
 import { asyncStorage } from "../storage/AsyncStorage";
+import { errorResponse } from "../../application/response";
 
 export const authMiddleware = (
   req: Request,
@@ -10,7 +11,8 @@ export const authMiddleware = (
 ) => {
   const { authorization } = req.headers;
 
-  if (!authorization) return res.status(401).json({ msg: "unauthorized" }).end();
+  
+  if (!authorization) return errorResponse(res, 'unauthorized', 401);
 
   // verificar se o token é valido
   const result: any = JwtService.verify(authorization);
@@ -19,6 +21,6 @@ export const authMiddleware = (
     asyncStorage.enterWith({ ...result });
     return next();
   }
-
-  return res.status(421).json({ msg: "invalid token" }).end();
+  
+  return errorResponse(res, 'invalid token', 401);
 };

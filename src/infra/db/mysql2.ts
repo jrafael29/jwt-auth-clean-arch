@@ -1,9 +1,11 @@
 import mysql from "mysql2";
 
-export const connection = mysql.createConnection({
-  host: '172.17.0.2',
-  user: 'root',
-  password: 'root',
-  database: 'adlearn',
-});
+const config = {
+  host: process.env.MYSQL_HOST,
+  user: process.env.MYSQL_USER,
+  password: process.env.MYSQL_PASSWORD,
+  database: process.env.MYSQL_DATABASE,
+}
+
+export const connection = mysql.createConnection(config);
 
