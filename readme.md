@@ -1,3 +1,11 @@
+Aplicação feita com o propósito de aprender e praticar Arquitetura Limpa. (Desacoplamento)
+
+Para rodar a aplicação: 
+```npm run start:dev```
+
+Para rodar os testes: 
+```npm test```
+
 Teste com cURL
 
 * ROTA PUBLICA
